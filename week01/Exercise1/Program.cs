@@ -6,10 +6,10 @@ class Program
     {
         Console.WriteLine("Hello World! This is the Exercise1 Project.");
         Console.Write("What is you first name? ");
-        string fname =  Console.ReadLine();
+        string firstName =  Console.ReadLine();
         Console.Write("What is you last name? ");
-        string lname =  Console.ReadLine();
-        Console.WriteLine($"Your name is {lname}, {fname} {lname}.");
+        string lastName =  Console.ReadLine();
+        Console.WriteLine($"Your name is {lastName}, {firstName} {lastName}.");
 
     }
 }
