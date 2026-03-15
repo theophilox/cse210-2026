@@ -6,6 +6,7 @@ class Program
     
     {
         Console.WriteLine("Hello World! This is the Journal Project.");
+        Journal myJournal = new Journal();
         
         int menuAnswer = 0;
 
@@ -26,12 +27,18 @@ class Program
 
 
             if (menuAnswer == 1)
-            {
+            {   
+                Entry myEntry = new Entry();
+                myEntry.WriteEntry();
+                myJournal.AddEntry(myEntry);
+
 
             }
             else if (menuAnswer == 2)
             {
-                
+
+                Console.WriteLine("\n--------------------MY JOURNAL---------------------");
+                myJournal.DisplayJournal();
             }
             else if (menuAnswer == 3)
             {
