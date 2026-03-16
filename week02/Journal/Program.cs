@@ -17,8 +17,8 @@ class Program
             Console.WriteLine("\n---------------------------------------");
             Console.WriteLine("1. Write new entry");
             Console.WriteLine("2. Display my journal");
-            Console.WriteLine("3. Load my journal");
-            Console.WriteLine("4. Save my journal");
+            Console.WriteLine("3. Save my journal");
+            Console.WriteLine("4. Load my journal");
             Console.WriteLine("5. Bye.");
             Console.WriteLine("---------------------------------------");
             Console.Write("\nWhat would you like to do? ");
@@ -42,10 +42,16 @@ class Program
             }
             else if (menuAnswer == 3)
             {
+                Console.Write("Please enter file name: ");
+                string fileName = Console.ReadLine();
+                myJournal.SaveJournal(fileName);
 
             }
             else if (menuAnswer == 4)
             {
+                Console.Write("Please enter the filename: ");
+                string fileName = Console.ReadLine();
+                myJournal.LoadJournal(fileName);
 
             }
             else if (menuAnswer == 5)

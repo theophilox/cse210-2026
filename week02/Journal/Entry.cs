@@ -17,7 +17,7 @@ public class Entry
         _prompt = randomQuestion;
         Console.WriteLine(_prompt);
 
-        Console.Write("Start Here ~> ");
+        Console.Write("Answer Here ~~> ");
         _answer = Console.ReadLine();
     }
 
