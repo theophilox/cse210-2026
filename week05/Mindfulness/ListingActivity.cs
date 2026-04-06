@@ -10,7 +10,7 @@ public class ListingActivity : Activity
         SetName("Listing");
         SetDescription("This exercise encourages you to focus on the positive aspects of your life by listing as many things as you can in a specific area.");
         SetDuration(30);
-
+        
         _prompts = new List<string> {
             "Which people in your life make you feel grateful or supported?",
             "What are some strengths or qualities in yourself that you’re proud of?",
@@ -36,13 +36,16 @@ public class ListingActivity : Activity
             ShowCountDown(5);
             Console.WriteLine();
             List<string> userResponses = new List<string>();
-            while (DateTime.Now < endTime) break;
+            while (DateTime.Now < endTime)
             {
                 Console.Write("> ");
                 string response = Console.ReadLine();
+
+                if (DateTime.Now > endTime) break;
+
                 userResponses.Add(response);
-                _count = userResponses.Count();
             }
+            _count = userResponses.Count();
         }
         Console.WriteLine($"You listed {_count} items.");
         DisplayEndingMessage();
