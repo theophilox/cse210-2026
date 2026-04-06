@@ -19,6 +19,7 @@ class Program
             Console.WriteLine("3. Start listing activity");
             Console.WriteLine("4. Quit");
             Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+            Console.WriteLine("");
             Console.Write("Select a choice from the menu: ");
             choice = int.Parse(Console.ReadLine());
 

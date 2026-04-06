@@ -14,12 +14,28 @@ public class BreathingActivity : Activity
 
         DateTime endTime = DateTime.Now.AddSeconds(GetDuration());
 
+        int inhale;
+        int exhale;
+
+        if (GetDuration() < 12)
+        {
+            inhale = GetDuration() / 2;
+            exhale = GetDuration() - inhale;
+        }
+        else
+        {
+            inhale = 6;
+            exhale = 6;
+        }
+
+        
+
         while (DateTime.Now < endTime)
         {
             Console.Write("\nBreathe in...");
-            ShowCountDown(6);
+            ShowCountDown(inhale);
             Console.Write("\nBreathe out...");
-            ShowCountDown(6);
+            ShowCountDown(exhale);
             Console.WriteLine();
         }
 
