@@ -11,8 +11,8 @@ public class BreathingActivity : Activity
     {
         DisplayStartingMessage();
         DisplayReady();
-        DateTime startTime = DateTime.Now;
-        DateTime endTime = startTime.AddSeconds(GetDuration());
+
+        DateTime endTime = DateTime.Now.AddSeconds(GetDuration());
 
         while (DateTime.Now < endTime)
         {
