@@ -41,7 +41,9 @@ public class ListingActivity : Activity
                 Console.Write("> ");
                 string response = Console.ReadLine();
 
-                if (DateTime.Now > endTime) break;
+                if (DateTime.Now > endTime) {
+                    break;
+                }
 
                 userResponses.Add(response);
             }
