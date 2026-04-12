@@ -12,10 +12,12 @@ public class GoalManager
     public void Run()
     {
         Console.Clear();
+        WelcomeText("Welcome to Eternal Quest Project.");
         string menuChoice;
 
         while (true)
         {
+            
             Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~");
             DisplayPlayerInfo();
             Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~");
@@ -274,4 +276,14 @@ public class GoalManager
         }
         
     }
+
+    public void WelcomeText(string text, int delay = 200)
+{
+    foreach (char c in text)
+    {
+        Console.Write(c);
+        Thread.Sleep(delay);
+    }
+    Console.WriteLine();
+}
 }
