@@ -18,6 +18,6 @@ public class EternalGoal : Goal
     public override string GetStringRepresentation()
 
     {
-        return $"Eternal Goal::{GetName()}::{GetDescription()}::{GetPoints()}";
+        return $"Eternal Goal/{GetName()}/{GetDescription()}/{GetPoints()}";
     }
 }

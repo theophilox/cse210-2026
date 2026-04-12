@@ -44,14 +44,17 @@ public class GoalManager
 
                 else if (menuChoice == "3")
                 {
-                    ShowSpinner(3);
                     SaveGoals();
+                    ShowSpinner(3);
+                    Console.WriteLine("Your Goal is Successfully Saved.");
                 }
 
                 else if (menuChoice == "4")
                 {
                     ShowSpinner(3);
                     LoadGoals();
+                    ShowSpinner(3);
+                    Console.WriteLine("Your Goal is Successfully Loaded.");
                 }
                 else if (menuChoice == "5")
                 {
@@ -78,13 +81,11 @@ public class GoalManager
     }    
 
     public void DisplayPlayerInfo()
-    // Displays the players current score.
     {
         Console.WriteLine($"\nYou have {_score} points.\n");
     }
 
     public void ListGoalDetails()
-    // Lists the details of each goal by calling each goal's GetDetailString() method.
     {
         int count = 0;
 
@@ -96,7 +97,6 @@ public class GoalManager
         }
     }
     public void CreateGoal()
-    // Asks the user for the information about a new goal. Then, creates the goal and adds it to the list.
     {
 
         while (true)
@@ -113,6 +113,12 @@ public class GoalManager
             Console.Write("Which type of goal would you like to create? ");
             userGoal = Console.ReadLine();
 
+
+            if (userGoal == "4") 
+            {
+                break;
+            }
+
             if (userGoal != "1" && userGoal != "2" && userGoal != "3")
             {
                 Console.WriteLine("\n~~~~~~~~~~~~~~~~~~~~~~~~~");
@@ -120,10 +126,7 @@ public class GoalManager
                 Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~\n");
                 continue;
             }
-            else if (userGoal == "4") 
-            {
-                break;
-            }
+            
 
             Console.Write("\nWhat is the name of your goal? ");
             string name = Console.ReadLine();
@@ -138,12 +141,16 @@ public class GoalManager
             {
                 SimpleGoal s1 = new SimpleGoal(name, description, points);
                 _goals.Add(s1);
+                ShowSpinner(3);
+                Console.Write("The goal has successfully created.");
             }
 
             else if (userGoal == "2")
             {
                 EternalGoal e1 = new EternalGoal(name, description, points);
                 _goals.Add(e1);
+                ShowSpinner(3);
+                Console.Write("The goal has successfully created.");
             }
 
             else if (userGoal == "3")
@@ -156,6 +163,8 @@ public class GoalManager
 
                 ChecklistGoal c1 = new ChecklistGoal(name, description, points, target, bonus);
                 _goals.Add(c1);
+                ShowSpinner(3);
+                Console.Write("The goal has successfully created.");
             }
 
         }
@@ -209,10 +218,10 @@ public class GoalManager
         int score = int.Parse(pointCount[0]);
         _score = score;
         
-        string[] lines = File.ReadAllLines(filename).Skip(1).ToArray();
+        string[] lines = File.ReadAllLines(path).Skip(1).ToArray();
         foreach (string line in lines)
         {
-            string[] parts = line.Split("::");
+            string[] parts = line.Split("/");
             string goalType = parts[0].Trim();
             string name = parts[1];
             string description = parts[2];
