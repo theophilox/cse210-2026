@@ -8,13 +8,13 @@ class Program
         List<Activity> activities = new List<Activity>();
 
 
-        RunningActivity running = new RunningActivity("03 Nov 2022", 30, 3);
+        RunningActivity running = new RunningActivity("13 April 2026", 60, 6);
         activities.Add(running);
 
-        CyclingActivity cycling = new CyclingActivity("03 Nov 2022", 30, 15);
+        CyclingActivity cycling = new CyclingActivity("14 April 2026", 45, 15);
         activities.Add(cycling);
 
-        SwimmingActivity swimming = new SwimmingActivity("03 Nov 2022", 30, 10);
+        SwimmingActivity swimming = new SwimmingActivity("15 April 2026", 90, 30);
         activities.Add(swimming);
 
 
